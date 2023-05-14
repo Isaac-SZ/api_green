@@ -23,5 +23,8 @@ def jsonify_custom(data):
 def loja():
     return jsonify_custom(lojas)
 
+
+
+
 if __name__ == '__main__':
     app.run()
