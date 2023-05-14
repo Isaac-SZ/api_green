@@ -6,7 +6,7 @@ app = flask.Flask(__name__)
 lojas = {
     1: {"Nome": "Ecoloja", "Endereco": "Rua das Ninfas", "Telefone": "99999-9999"},
     2: {"Nome": "Organics", "Endereco": "Rua da Aurora", "Telefone": "99999-9992"},
-    3: {"Nome": "Feira do Zé", "Endereco": "Rua do zezinho", "Telefone": "99999-9993"},
+    3: {"Nome": "Feira do Ze", "Endereco": "Rua do zezinho", "Telefone": "99999-9993"},
 }
 
 
@@ -21,6 +21,15 @@ def jsonify_custom(data):
 @app.route('/', methods=['GET'])
 def loja():
     return jsonify_custom(lojas)
+
+@app.route('/loja/<int:id>', methods=['GET'])
+def get_loja(id):
+    if id in lojas:
+        return jsonify_custom(lojas[id])
+    else:
+        return jsonify_custom({"message": "Loja não encontrada"}), 404
+
+
 
 
 
