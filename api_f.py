@@ -18,7 +18,6 @@ def jsonify_custom(data):
     )
     return response
 
-
 @app.route('/', methods=['GET'])
 def loja():
     return jsonify_custom(lojas)
