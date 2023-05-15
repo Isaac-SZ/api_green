@@ -27,7 +27,7 @@ def get_loja(id):
     if id in lojas:
         return jsonify_custom(lojas[id])
     else:
-        return jsonify_custom({"message": "Loja não encontrada"}), 404
+        return jsonify_custom({"message": "Loja nao encontrada"}), 404
 
 
 
