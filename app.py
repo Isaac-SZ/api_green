@@ -1,12 +1,12 @@
-import json
+weimport json
 import flask
 
 app = flask.Flask(__name__)
 
 lojas = {
-    1: {"Nome": "Ecoloja", "Endereco": "Rua das Ninfas", "Telefone": "99999-9999"},
-    2: {"Nome": "Organics", "Endereco": "Rua da Aurora", "Telefone": "99999-9992"},
-    3: {"Nome": "Feira do Ze", "Endereco": "Rua do zezinho", "Telefone": "99999-9993"},
+    1: {"Nome Fantasia": "Ecoloja", "Razao Social": "Ecoloja SA", "CNPJ": "22.206.183/0001-39", "Endereco": "Rua das Ninfas", "Redes Sociais": "@ecoloja"},
+    2: {"Nome Fantasia": "Ecoloja", "Razao Social": "Ecoloja SA", "CNPJ": "22.206.183/0001-39", "Endereco": "Rua das Ninfas", "Redes Sociais": "@ecoloja"},
+    3: {"Nome Fantasia": "Ecoloja", "Razao Social": "Ecoloja SA", "CNPJ": "22.206.183/0001-39", "Endereco": "Rua das Ninfas", "Redes Sociais": "@ecoloja"},
 }
 
 
