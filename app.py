@@ -16,12 +16,6 @@ def jsonify_custom(data):
 def loja():
     return jsonify_custom(lojas)
 
-@app.route('/loja/<int:id>', methods=['GET'])
-def get_loja(id):
-    if id in lojas:
-        return jsonify_custom(lojas[id])
-    else:
-        return jsonify_custom({"message": "Loja nao encontrada"}), 404
 
 @app.route('/loja/forms', methods=['POST'])
 def adicionar_loja():
@@ -29,6 +23,12 @@ def adicionar_loja():
     lojas.append(loja)
     return "Loja cadastrada com sucesso!"
 
+@app.route('/loja/<int:id>', methods=['GET'])
+def get_loja_by_id(id):
+    for loja in lojas:
+        if loja['id'] == id:
+            return jsonify_custom(loja)
+    return "Loja não encontrada!"
 
 if __name__ == '__main__':
     app.run()
