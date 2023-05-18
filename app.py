@@ -30,5 +30,13 @@ def get_loja_by_id(id):
             return jsonify_custom(loja)
     return "Loja não encontrada!"
 
+@app.route('/loja/<int:id>', methods=['DELETE'])
+def excluir_loja(id):
+    for loja in lojas:
+        if loja['id'] == id:
+            lojas.remove(loja)
+            return "Loja excluída com sucesso!"
+    return "Loja não encontrada!"
+
 if __name__ == '__main__':
     app.run()
